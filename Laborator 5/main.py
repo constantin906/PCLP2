@@ -58,7 +58,7 @@ def citire_matrice(mat):
         valori = input(f"Introdu {m} elemente pentru linia {i+1}, separate prin spatiu: ")
         while len(valori.split())!=m:
             valori = input(f"Introdu {m} elemente pentru linia {i+1}, separate prin spatiu: ")
-        mat.append(list(map(int, valori.split())))
+        mat.append([int(x) for x in valori.split()])
     return mat
 
 def afisare_matrice(mat):
@@ -164,7 +164,7 @@ def matrice():
               "Optiunea dumneavoastra: ", end="")
         choice = getch().decode().upper()
         print(choice)
-        match choice.upper():
+        match choice:
             case "1":
                 mat = citire_matrice(mat)
             case "2":
