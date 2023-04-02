@@ -44,6 +44,16 @@ def este_prim(n):
     if prim_sau_nu: print(f"Numarul [{n}] este prim!")
     else: print(f"Numarul [{n}] nu este prim!")
 
+def este_perfect(n):
+    n = int(input("Introdu o valoare pentru n: "))
+    suma_d = 0
+    for i in range(1, n):
+        if n%i==0:
+            suma_d+=i
+    if suma_d == n: print(f"Numarul [{n}] este perfect!")
+    else: print(f"Numarul [{n}] nu este perfect!")
+
+
 def s_palindrom(s):
     s = input("Introdu un sir de caractere: ")
     cuvinte = s.split()
@@ -53,15 +63,6 @@ def s_palindrom(s):
     invers_str = ' '.join(invers)
     if invers_str == s: print("Sirul introdus este palindrom!")
     else: print("Sirul introdus nu este palindrom!")
-
-def este_perfect(n):
-    n = int(input("Introdu o valoare pentru n: "))
-    suma_d = 0
-    for i in range(1, n):
-        if n%i==0:
-            suma_d+=i
-    if suma_d == n: print(f"Numarul [{n}] este perfect!")
-    else: print(f"Numarul [{n}] nu este perfect!")
 
 def sortare(n):
     n = [int(el) for el in input("Introdu o lista de numere intregi, separate prin spatiu: ").split()]
@@ -73,6 +74,14 @@ def sortare(n):
         case "D":
             n.sort(reverse=True)
             print(f"Lista sortata descrescator este: ", *n)
+
+def sortare_sir(s):
+    s = input("Introdu un sir de caractere: ")
+    s = s.split() # Transformam sirul de caractere intr-o lista
+    s.sort() # Pentru sortare inversa, introdu "reverse=True"
+    print("Sirul introdus in ordine alfabetica:", *s)
+    ######## MAJUSCULELE VOR APAREA INTOTDEAUNA INAINTEA ELEMENTELOR CARE INCEP CU LITERA MICA ########
+
 
 def main():
     n = 0
